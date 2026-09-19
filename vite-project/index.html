@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="portfolioです。プロフィールなどをご覧いただけます。">
+    <title>portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=M+PLUS+1p&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/main.css">
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+      <div class="container col-1">
+        <h2 class="portfolio">
+          <a href="./">Portfolio</a>         
+        </h2>
+        <!-- ナビゲーション -->
+        <nav class="header-menu">
+          <ul class="nav-links">
+            <li><a href="./">Home</a></li>
+            <li><a href="./#works">Works</a></li>
+            <li><a href="./#profile">Profile</a></li>
+            <li><a href="./#other">Other</a></li>
+            <li><a href="./#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- ハンバーガーメニュー -->
+        <button id="hamburger" class="hamburger">
+            <span class="hamburger-line"></span>
+        </button>
+      </div><!-- containerここまで --> 
+             
+        <!-- ドロワーメニュー -->               
+        <nav id="nav-menu" class="nav-menu">
+            <div class="profile-area">
+                
+                <h2 class="portfolio">
+                  Portfolio      
+                </h2>
+            </div>
+            <div class="nav-links-area">
+                <ul class="nav-links">
+                  <li>
+                    <a href="./">
+                      <img src="./src/images/nav-links/home.png" alt="">
+                      <span>Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./#works">
+                      <img src="./src/images/nav-links/works.png" alt="">
+                      <span>Works</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./#profile">
+                      <img src="./src/images/nav-links/profile.png" alt="">
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./other">
+                      <img src="./src/images/nav-links/other.png" alt="">
+                      <span>Other</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./#contact">
+                      <img src="./src/images/nav-links/mail.png" alt="">
+                      <span>Contact</span>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="social-links-area">
+                <ul class="social-links">
+                    <li><a href="#" class="sns-icon Instagram"></a></li>
+                    <li><a href="#" class="sns-icon Twitter"></a></li>
+                    <li><a href="#" class="sns-icon Line"></a></li>
+                    <li><a href="#" class="sns-icon mail"></a></li>
+                </ul>
+            </div>               
+        </nav>
+
+    </header>
+
+    <!-- メイン -->
+    <main>
+      <section id="fv" class="fv">
+        <!-- 水玉背景 -->
+        <div class="fv-background"></div>
+        <!-- particle.js -->
+        <div id="particles-js" class="particles"></div>
+        <!-- FVコンテンツ -->
+        <div class="container col-1">
+          <div class="fv-content">
+            <h1>Portfolio</h1>
+            <h2>michiko Iseki</h2>
+            <p>シンプルで、見やすい<br>
+                デザインを目指してます。
+            </p>
+
+            
+        </div>
+
+        </div><!-- containeここまで -->
+      </section>
+
+      <section id="works" class="works">
+        <div class="container col-1">
+            
+          <div>
+            
+              
+
+          </div>
+
+        </div><!-- containeここまで -->
+      </section>
+
+      <section id="profile" class="profile">
+        <div class="container col-1">
+
+        </div><!-- containeここまで -->
+      </section>
+
+      <section id="other" class="other">
+        <div class="container col-1">
+
+        </div><!-- containeここまで -->
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container col-1">
+
+        </div><!-- containeここまで -->
+      </section>
+
+    </main>
+    <!-- フッター -->
+    <footer>
+      <div class="social-links-area">
+          <ul class="social-links">
+              <li><a href="#" class="sns-icon Instagram"></a></li>
+              <li><a href="#" class="sns-icon Twitter"></a></li>
+              <li><a href="#" class="sns-icon Line"></a></li>
+              <li><a href="#" class="sns-icon mail"></a></li>
+          </ul>
+      </div>       
+
+    </footer>
+    
+
+    
+    <script type="module" src="./src/js/main.js"></script>
+    <!-- ドロワーメニュー -->
+     <script type="module" src="./src/js/style.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+main{
+    padding-top: 0;
+/*-----------
+fv画面
+----------*/
+
+   .fv{
+    position: relative;
+    height: 100vh;
+    width: 100%; /*vwにするとスクロールバーも含めるのでheader横幅とずれる*/
+    overflow: hidden;
+
+    /*----------
+    水玉模様
+    -----------*/
+    .fv-background{ 
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(../images/background_first.png);
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+    @media screen and (max-width: 768px){
+        .fv-background{
+            background-image: url(../images/background_sp.png);
+        }
+    }
+
+    /*----------
+    particle.js
+    -----------*/
+    .particles{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;/*水玉の上に置く*/
+        pointer-events: none; /* 消すかも？ */
+
+    }
+
+    /*----------
+    fvコンテンツ
+    -----------*/
+    .container.col-1{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 2;/*particlesの上に置く*/
+            .fv-content{
+                position: absolute;
+                top: 43%;
+                left: 15%;
+                transform: translateY(-50%);
+                width: max-content;
+                overflow: visible; /* 文字が親要素からはみ出しても切らない */
+                h1{
+                    margin: 0;
+                    padding: 0.1em 0.15em;
+                    font-family: "Caveat", cursive;
+                    font-weight: bold;
+                    font-size: clamp(7rem, 2.3333rem + 9.7222vw, 14rem);
+                    line-height: 1;
+                    white-space: nowrap;
+                    background-image: var(--gradient);
+                    color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    transform: rotate(-8deg);
+                    
+                }
+                h2{
+                    margin-top: -1rem;
+                    margin-left: 7rem;
+                    font-family: "Caveat", cursive;
+                    font-weight: bold;
+                    font-size: clamp(1.8rem, -1.6667rem + 7.2222vw, 7rem);
+                    color: var(--color-accent);
+                    line-height: 1.2;
+                }
+                p{
+                    margin-top: 1.5rem;
+                    margin-left: 7rem;
+                    color: var(--color-accent);
+                }
+            }
+        }
+    }
+}
+

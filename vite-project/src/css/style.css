@@ -87,6 +87,7 @@ fv画面
                     margin-top: 1.5rem;
                     margin-left: 7rem;
                     color: var(--color-accent);
+                    font-size: clamp(1rem, 1.5vw, 1.4rem);
                 }
             }
         }

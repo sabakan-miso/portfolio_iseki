@@ -6,7 +6,11 @@
 
 /* アクセントカラー */
 --color-accent: #5885b8;
---color-accent2: #ff8ed8 ;
+--color-accent2: #ff8ed8;
+--color-accent3: #678db8;
+
+
+
 
 /* グラデーション */
 --gradient:linear-gradient(
@@ -95,9 +99,9 @@ small{
     /* ↑後で消す */
 }
 
-*{
+/* *{
     outline:1px solid rgb(255, 145, 145);
-}
+} */
     /* radial-gradient(#fff 28%, transparent 30%),
     radial-gradient(#fff 28%, transparent 30%);
     background-size: 20px 20px;

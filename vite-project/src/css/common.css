@@ -1,17 +1,23 @@
 /*----------------
+階層構造
+×ボタン       z-index: 200
+ドロワー      z-index: 150
+ヘッダー      z-index: 100
+暗幕          z-index: 90
+FV            z-index: 0～ 
+----------------*/
+
+/*----------------
   背景を暗くする
 -----------------*/
 body:has(.nav-menu.active)::before{
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    inset: 0;
     background: rgba(35, 55, 80, 0.45);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    z-index: 50;/*----上から4番目----*/ 
+    z-index: 90;/*----上から4番目----*/ 
 }
 
 
@@ -108,14 +114,14 @@ header
             top: 50%;
             right: 1rem;
             transform: translateY(-50%);           
-            background: none;
+            background: transparent;
             border: none;
             cursor: pointer;
             padding: 0;
             .hamburger-line{
                 display: block;
                 width: 100%;
-                height: 3px;
+                height: 2px;
                 position: absolute;
                 top: 50%;
                 left: 0;
@@ -197,25 +203,15 @@ header
     opacity: 1;
     pointer-events: auto;
 }
-@media screen and (max-width: 768px) {
-    .header-menu{
-        display: none;
-    }
-    .hamburger{
-        display: flex;
-    }
-    .nav-menu{
-        display: flex;
-       
-    }
-}
+
 
 /* ドロワー内の装飾 */
 .profile-area{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 3rem;
     .portfolio{      
         font-family: "Caveat", cursive;
@@ -224,10 +220,34 @@ header
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
-        padding: 0;
+        padding: 1rem;
+        transform: rotate(-8deg) translateX(-1.5rem);
 
        
-    }    
+    } 
+    .name{
+        position: relative;
+        display: inline-block;
+        background-image: var(--gradient-2);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text; 
+        padding-bottom: 0.7rem;
+        &::after{
+        content: "";
+        display: block;
+        width: 60%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        
+        background: var(--gradient-line);
+        border-radius: 5px;
+
+        }  
+    }
+    
 }
 
 .nav-links-area{
@@ -237,38 +257,66 @@ header
         flex-direction: column;  
         gap:0.8rem; 
         width: 100%;
-        a{
-            display: block;
+        li{
+            width: 100%;
+        }
+        a{            
             position: relative;
-            
+            display: flex;
+            align-items: center;
+            width: 100%;
             color: var(--color-accent);
-            padding: 1.2rem 2rem 1.2rem 5rem;
+            padding: 1rem 3rem;
             border-radius: 30px;
-            background-image: var(--gradient-3);
-            font-size: 2rem;
+            font-size: 1.8rem;
             transition: color 0.3s ease,
                         transform 0.3s ease;
-            &::after{
+            &::after{   /*----- 矢印 -----*/
                 content: "";
-                display: inline-block;
+                position: absolute;
+                top: 50%;
+                right: 2rem;
                 width: 10px;
                 height: 10px;
                 border-top: 2px solid var(--color-accent);
                 border-right: 2px solid var(--color-accent);
-                position: absolute;
-                right: 2rem;
-                top: 50%;
                 transform: translateY(-50%) rotate(45deg);
-             
+                transition: all 0.3s;
+           
             }
+            
             &:hover{
                 color: var(--color-accent2);
                 background-image: var(--gradient-3);
                 transform: translateX(5px);
+                 /*----- 矢印もhoverで色変更 -----*/
+                &::after{
+                    border-top: 2px solid var(--color-accent2);
+                    border-right: 2px solid var(--color-accent2);
+                } 
             }
             img{
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
+                margin-right: 1.5rem;
+                border-radius: 50%;
+                padding: 6px;
+                object-fit: contain;
+            }
+            .home-icon{
+                background-color: #faebf5;
+            }
+            .works-icon{
+                background-color: #cee3fb;
+            }
+            .profile-icon{
+                background-color: #e6dffe;
+            }
+            .other-icon{
+                background-color: #e5fff8;
+            }
+            .contact-icon{
+                background-color: #f4dcf9;
             }
         }    
     }
@@ -277,8 +325,20 @@ header
  sns
 ---------------*/
 .social-links-area{
+    position: relative;
     margin-top: 3rem;
+    padding-top: 2.5rem;
     width: 100%;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        display: block;
+        background-image: var(--gradient-line);
+        border-radius: 5px;
+    }
     .social-links{
         display: flex;
         gap: 1.5rem;
@@ -313,7 +373,21 @@ header
         }
     }
 }
-
+/*---------------
+ スマホ・タブレット対応
+---------------*/
+@media screen and (max-width: 768px) {
+    .header-menu{
+        display: none;
+    }
+    .hamburger{
+        display: flex;
+    }
+    .nav-menu{
+        display: flex;
+       
+    }
+}
 
 
 

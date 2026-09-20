@@ -26,6 +26,12 @@
     #ff8ed8 
     
 );
+--gradient-line2:linear-gradient(
+    to bottom,
+    #4dc9ff,
+    #ff8ed8 
+    
+);
 --gradient-2:linear-gradient(
     135deg,
     #4dc9ff,
@@ -38,11 +44,16 @@
     #ffd2f559
     
 );
---back-gradient4:linear-gradient(
-    #FFF 70%,
-    rgb(116, 255, 174)         
-);
+--gradient-4:linear-gradient(
+    45deg, 
+    #c5ebfb,
+    #e8e8fd,
+    #fdd8f0                 
+ );
+
+
 }
+
 
 /* その他の設定 */
 *{

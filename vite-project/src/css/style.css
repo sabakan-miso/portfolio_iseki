@@ -94,6 +94,29 @@ main{
     }
 }
 
+/*----------------
+observeの共通タイトル
+---------------*/
+
+.observe-title{
+    font-family: "Caveat", cursive;
+    font-size: 7rem;
+    line-height: 1.1;
+    writing-mode: vertical-rl;
+    background-image: var(--gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding: 2rem;
+    transform: translateX(-200px) rotate(180deg);/*----- WORKSのタイトルは左側の90pxなのでoptionsで広げる -----*/
+    opacity: 0;
+    transition: transform 0.6s ease, 
+                opacity 0.6s ease;
+}
+.observe-title.active{
+    transform: translateX(0) rotate(180deg);
+    opacity: 1;
+}
 
 /*----------
     works
@@ -101,7 +124,6 @@ main{
 .works{
     width: 100%;
     padding: 10rem 0 12rem;
-   
     background-image: url(../images/background.png);
     background-size: 100% auto;
     background-position: top center;
@@ -121,18 +143,7 @@ main{
     flex-direction: column;
     align-items: center;
     height: 100%;
-    .works-title{
-        font-family: "Caveat", cursive;
-        font-size: 7rem;
-        line-height: 1.1;
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        background-image: var(--gradient);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        padding: 2rem;
-    }
+    
     .works-side-text{
         display: flex;
         align-items: flex-start;

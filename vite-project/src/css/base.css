@@ -89,7 +89,7 @@ h2{
     font-size: clamp(2rem, 1.6667rem + 0.6944vw, 2.5rem);
 }
 h3{
-    font-size: clamp(1.5rem, 1.0333rem + 0.9722vw, 2.2rem);
+    font-size: clamp(1.8rem, 1.5333rem + 0.5556vw, 2.2rem);
 }
 h4{
     font-size: clamp(1.6rem, 1.3333rem + 0.5556vw, 2rem);
@@ -105,14 +105,14 @@ small{
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    /* background-color: rgb(190, 218, 242);  */
-    /* outline: 1px solid red; */
+    /* background-color: rgba(190, 218, 242, 0.2);  */
+
     /* ↑後で消す */
 }
 
-/* *{
-    outline:1px solid rgb(255, 145, 145);
-} */
+*{
+    /* outline:1px solid rgb(255, 145, 145); */
+}
     /* radial-gradient(#fff 28%, transparent 30%),
     radial-gradient(#fff 28%, transparent 30%);
     background-size: 20px 20px;

@@ -1,8 +1,8 @@
 main{
     padding-top: 0;
-/*-----------
+/*---------------------
    fv画面
-----------*/
+--------------------*/
 
    .fv{
     position: relative;
@@ -118,9 +118,11 @@ observeの共通タイトル
     opacity: 1;
 }
 
-/*----------
+
+
+/*--------------------
     works
- -----------*/
+ ---------------------*/
 .works{
     width: 100%;
     padding: 0;
@@ -412,9 +414,9 @@ observeの共通タイトル
 
 
 
-/*----------
+/*--------------------
    profile
- -----------*/
+ ---------------------*/
 .profile{
     width: 100%;
     padding: 5rem 0;
@@ -652,6 +654,225 @@ observeの共通タイトル
 .profile .profile-list .profile-skills{
     grid-column: 1 / -1;/*- 2列分使う -*/
     grid-row: 3;/*- 3段目 -*/
+}
+
+}/*----- メディアクエリ終わり -----*/
+
+
+
+
+
+/*--------------------
+   other
+ ---------------------*/
+.other{
+    width: 100%;
+    padding: 5rem 0;
+    background-color:var(--color-accent4);
+}
+/*----- other全体 -----*/
+.other .container{
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);/*- 右側が縮められる -*/
+    gap: 40px;
+}
+/*----------
+  other左側
+ -----------*/
+.other-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    .other-side-text{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+    .other-side-text span{
+        display: block;
+        width: 2px;
+        height: 280px;
+        background-image: var(--gradient-line2);
+    }
+    .other-side-text p{
+        margin: 4.5rem 0 0 0.8rem;
+        writing-mode: vertical-rl;
+        line-height: 1.8;
+        background-image: var(--gradient);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;        
+    }
+    
+}
+
+/*----------
+  other右側
+ -----------*/
+.other-list{
+    width: 100%;
+    min-width: 0;/*- グリッド内で横幅がはみ出すのを防ぐ? -*/
+    .other-item{
+        grid-column: 2;
+        margin-bottom: 2.5rem;
+    }
+    .other-item .other-info{
+        max-width: 52rem;
+        
+    }
+    .other-item .other-info h3{
+        width: fit-content;
+        margin: 2rem 0 3rem;
+        font-size: 2.5rem;
+        line-height: 1.5;
+        letter-spacing: 0.2rem;
+        background-image: var(--gradient-line2);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        transform: rotate(-10deg);
+    } 
+    
+    .other-item .other-info .other-description{
+        color: var(--color-text2);
+        padding-left: 2rem;
+        margin: 0 0 1rem;
+        line-height: 1.9;        
+    }
+    /*----- splide  -----*/
+    .other-splide::before{
+        content: "Hobby Gallery";
+        display: block;
+        width: fit-content;
+        margin: 0 auto 1.5rem;
+        padding: 0.5rem;
+        font-family: "Caveat", cursive;
+        font-size: 3rem;
+        line-height: 1.2;
+        background-image: var(--gradient);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+    }
+    .other-splide{
+        position: relative;
+        padding: 0 2rem 2.5rem;/*- 矢印用に左右のスペースを確保 -*/
+        width: 100%;
+        margin: 0 auto;
+    }
+    .other-splide .splide__track{ /*- 中央の拡大部分が切れないようにスペース -*/
+       padding: 1.5rem 0;
+    }
+    
+    .other-splide .splide__slide img{
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+    }
+    .other-splide .splide__slide{ 
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+    .other-splide .splide__slide.is-active{ /*- 中央だけ少し拡大 -*/
+        position: relative;
+        z-index: 2;
+        transform: scale(1.1);
+    }
+    /*- 矢印の背景の丸 -*/
+    .other-splide .splide__arrow{
+        border: 1px solid #c9a8f5;
+        background-color: #f6fafd;
+        opacity: 1;
+        box-shadow: 0 3px 10px rgba(124, 94, 185, 0.4);
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    /*- 左矢印 -*/
+    .other-splide .splide__arrow--prev{
+        left: 0;
+    }
+
+    /*- 右矢印 -*/
+    .other-splide .splide__arrow--next{
+        right: 0;
+    }
+    /*- hover -*/
+    .other-splide .splide__arrow:hover {
+        background: #ffe5f1;
+        transform: translateY(-50%) scale(1.3);/*- translateYは矢印の中心をスライダーの中央に合わせるため-*/
+    }   
+
+    /*- 矢印アイコンの色 -*/
+    .other-splide .splide__arrow svg{
+        fill: #a283e6;
+    }
+
+    /* ページネーションのスタイル */
+    .other-splide .splide__pagination__page{
+        background-color: #abc2d0;
+    }
+    .other-splide .splide__pagination__page.is-active{
+        /* background-image: var(--gradient); */
+    background-color: #a283e6;
+    }
+    .other-bottom-text{
+        grid-column: 2;
+        width: 100%;
+        margin: 2rem 0 0;
+        text-align: center;
+        line-height: 1.9;
+        color: var(--color-text2);
+    }
+
+}/*- 右側 other-list終わり -*/
+
+
+
+/*--------------------
+     レスポンシブ
+ ---------------------*/
+@media screen and (max-width:768px) {
+
+  /*----- スマホ版のみ上の余白削除 -----*/
+
+.other .container{
+    display: block;
+    
+}
+.other .other-side{
+    position: relative;
+    flex-direction: row;
+    height: auto;
+    margin-bottom: 1.5rem;
+    grid-column: 1;/*- 左列 -*/
+    grid-row: 1;/*- 1段目 -*/
+}
+.other .other-side-text{
+    margin: 1rem 0 1rem 1rem;
+}
+.other .other-list .other-item .other-info{
+    grid-column: 1 / -1;/*- 2列分使う -*/
+    grid-row: 2;/*- 2段目 -*/
+    max-width: 34rem;
+    margin: 0 auto;
+    & h3{
+        font-size: 2rem;
+        transform: rotate(-5deg);
+        margin: 1rem 0 2rem;
+    }
+    & .other-description{
+        max-width: 100%;
+        padding: 0;
+    }
+}
+.other .other-list .other-splide{
+    grid-column: 1 / -1;/*- 2列分使う -*/
+    grid-row: 3;/*- 3段目 -*/
+   
 }
 
 }/*----- メディアクエリ終わり -----*/

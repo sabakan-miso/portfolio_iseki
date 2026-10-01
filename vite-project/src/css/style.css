@@ -413,7 +413,6 @@ observeの共通タイトル
 
 
 
-
 /*--------------------
    profile
  ---------------------*/
@@ -837,7 +836,6 @@ observeの共通タイトル
  ---------------------*/
 @media screen and (max-width:768px) {
 
-  /*----- スマホ版のみ上の余白削除 -----*/
 
 .other .container{
     display: block;
@@ -882,8 +880,204 @@ observeの共通タイトル
 
 
 
+/*--------------------
+   contact
+ ---------------------*/
+.contact{
+    width: 100%;
+    padding: 5rem 0 2.5rem;
+    background-image: url(../images/contact.png);
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+
+}
+/*----- contact全体 -----*/
+.contact .container{
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);/*- 右側が縮められる -*/
+    gap: 40px;
+}
+/*----------
+  other左側
+ -----------*/
+.contact-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    .contact-side-text{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+    .contact-side-text span{
+        display: block;
+        width: 2px;
+        height: 280px;
+        background-image: var(--gradient-line2);
+    }
+    .contact-side-text p{
+        margin: 4.5rem 0 0 0.8rem;
+        writing-mode: vertical-rl;
+        line-height: 1.8;
+        background-image: var(--gradient);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;        
+    }
+    
+}
+/*----------
+  other右側
+ -----------*/
+.contact-list .contact-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .contact-info h3{   /*- 左側の内容 -*/
+        width: fit-content;
+        margin: 3rem 0 4rem;
+        font-size: 2.5rem;
+        line-height: 1.5;
+        letter-spacing: 0.2rem;
+        background-image: var(--gradient);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        transform: rotate(-10deg);
+    }
+    .contact-info .contact-description{
+        color: var(--color-text2);
+        padding-left: 1rem;
+        margin: 0 0 1rem;
+        line-height: 1.9; 
+    }
+    .contact-info .social-links-area{
+        position: relative;
+    }
+    .contact-info .social-links-area::after{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        width: 90%;
+    }
+    .contact-form{  /*- 右側のcontact form -*/
+        padding: 2rem;
+        border: 1px solid rgba(255,255,255,0.7);
+        border-radius: 1.5rem;
+        background-color: rgba(255,255,255,0.5);
+        box-shadow: 0 10px 20px rgba(130,170,190,0.5);
+        backdrop-filter: blur(3px);
+        width: 100%;
+    }
+    .contact-form form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .contact-form form .form-item{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        & label{
+           font-size: 1.3rem; 
+           letter-spacing: 0.1rem;
+        }
+    }
+    .contact-form form .form-item input,
+    .contact-form form .form-item textarea{
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid rgba(130,170,190,0.5);
+        border-radius: 10px;
+        outline: none;/*- 選択時の黒枠を消す -*/
+    }
+
+    /*- focus時のborderを指定 -*/
+    .contact-form form .form-item input:focus,
+    .contact-form form .form-item textarea:focus{
+        border: 1px solid var(--color-accent5);
+    }
+
+    /*- 送信ボタン -*/
+    .contact-form form .contact-button input{
+        background-image: var(--gradient);
+        color: var(--color-base);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease,
+                    opacity 0.3x ease;
+    }
+
+    .contact-form form .contact-button input:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(98, 129, 144, 0.5);
+        opacity: 0.6;
+    }
 
 
+
+
+}
+
+
+
+/*--------------------
+     レスポンシブ
+ ---------------------*/
+@media screen and (max-width:768px) {
+    .contact{
+        background-image: url(../images/contact_sp.png);
+    }
+
+    .contact .container{
+        display: block;
+    }
+    .contact .contact-side{
+        position: relative;
+        flex-direction: row;
+        height: auto;
+        margin-bottom: 1.5rem;
+        
+    }
+    .contact .contact-side-text{
+        margin: 1rem 0 1rem 1rem;
+    }
+    .contact .contact-list{ /* 右側 */
+        width: 100%;
+    }
+    .contact .contact-list .contact-item{ /* PCの2列Gridを解除 */
+        display: block;
+    }
+    .contact .contact-list .contact-item .contact-info{
+        max-width: 34rem;
+        margin: 0 auto;
+        & h3{
+            font-size: 2rem;
+            transform: rotate(-5deg);
+            margin: 1rem 0 2rem;
+        }
+        & .contact-description{
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .contact .contact-list .social-links-area{
+        margin-bottom: 2rem;
+    }
+
+    .contact .contact-form{
+        width: 100%;
+        max-width: 60rem;
+        margin: 2rem auto 0;
+    }
+
+    
+}/*----- メディアクエリ終わり -----*/
+    
 
 
 

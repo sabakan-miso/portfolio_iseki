@@ -1080,8 +1080,15 @@ observeの共通タイトル
     
 
 
-
-
+/*--------------------
+     　フッター
+ ---------------------*/
+footer{
+    background-color:var(--color-accent4);
+    font-family: "Caveat", cursive;
+    padding: 2rem 0;
+    text-align: center;
+}
 
 
 

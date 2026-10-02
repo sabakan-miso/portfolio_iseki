@@ -1,6 +1,6 @@
 ## Live Demo
 
-[Portfolio](ここに公開URL)
+[Portfolio]　https://sabakan-miso.github.io/portfolio_iseki/
 
 # portfolio_iseki
 
